@@ -1,0 +1,18 @@
+{
+    "name": "nikol/phpiggy",
+    "description": "A PHP application for tracking expenses.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "NIKOS PAPAGEORGIOU",
+            "email": "nikolas_uoa@hotmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4":{
+            "Framework\\":"src/Framework",
+            "App\\":"src/App"
+        }
+    }
+}
