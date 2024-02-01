@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Middleware;
 
 use Framework\Contracts\MiddlewareInterface;
-use Framework\Exception\ValidationException;
+use Framework\Exceptions\ValidationException;
 
 class ValidationExceptionMiddleware implements MiddlewareInterface
 {
@@ -15,7 +15,8 @@ class ValidationExceptionMiddleware implements MiddlewareInterface
         try {
             $next();
         } catch (ValidationException $e) {
-            redirectTo("/register");
+            $referer = $_SERVER['HTTP_REFERER'];
+            redirectTo($referer);
         }
     }
 }
