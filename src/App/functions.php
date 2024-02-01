@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -7,13 +7,22 @@ declare(strict_types=1);
 *This function is used to output the $value prettier
 *It is really useful for debugging
 */
-function dd(mixed $value){
+function dd(mixed $value)
+{
     echo '<pre>';
-print_r($value);
-echo '</pre>';
-die();
+    print_r($value);
+    echo '</pre>';
+    die();
 }
 
-function e(mixed $value):string{
+function e(mixed $value): string
+{
     return htmlspecialchars((string)$value);
+}
+
+function redirectTo(string $path)
+{
+    header("Location: {$path}");
+    http_response_code(302);
+    exit;
 }
